@@ -1,0 +1,7 @@
+spring:
+  session:
+    store-type: jdbc
+    timeout: 10m
+  main:
+    banner-mode: off
+

@@ -4,7 +4,6 @@ import com.virtuslab.internship.entity.basket.Basket;
 import com.virtuslab.internship.entity.product.Product;
 import com.virtuslab.internship.entity.product.ProductDb;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -12,13 +11,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ReceiptGenerator {
-
-    public Receipt generate(Basket basket) {
-        List<ReceiptEntry> receiptEntries = countAndGetReceiptEntries(basket);
-
-
-        return new Receipt(receiptEntries);
-    }
 
     private static List<ReceiptEntry> countAndGetReceiptEntries(Basket basket) {
         List<ReceiptEntry> receiptEntries = new ArrayList<>();
@@ -33,5 +25,12 @@ public class ReceiptGenerator {
         }
 
         return new ArrayList<>(receiptEntries);
+    }
+
+    public Receipt generate(Basket basket) {
+        List<ReceiptEntry> receiptEntries = countAndGetReceiptEntries(basket);
+
+
+        return new Receipt(receiptEntries);
     }
 }

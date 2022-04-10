@@ -1,7 +1,6 @@
 spring:
   session:
     store-type: jdbc
-    timeout: 10m
+    timeout: 5s
   main:
     banner-mode: off
-

@@ -3,6 +3,7 @@ package com.virtuslab.internship.entity.product;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -26,7 +27,7 @@ public class ProductDb {
                 new Product("Pork", Product.Type.MEAT, new BigDecimal(16)),
                 new Product("Steak", Product.Type.MEAT, new BigDecimal(50)),
                 new Product("Bread", Product.Type.GRAINS, new BigDecimal(5)),
-                new Product("Cereals", Product.Type.GRAINS,new BigDecimal(8))
+                new Product("Cereals", Product.Type.GRAINS, new BigDecimal(8))
         ).collect(Collectors.toSet());
     }
 
@@ -35,5 +36,14 @@ public class ProductDb {
                 .filter(product -> productName.equals(product.name()))
                 .findFirst()
                 .get();
+    }
+
+    public boolean contains(final String name) {
+        for (Product product : products) {
+            if (Objects.equals(product.name(), name)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

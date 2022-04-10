@@ -22,9 +22,9 @@ public class FifteenPercentDiscount {
 
     private boolean shouldApply(final Receipt receipt) {
         final ProductDb productDb = new ProductDb();
-        for(ReceiptEntry receiptEntry: receipt.entries()) {
+        for (ReceiptEntry receiptEntry : receipt.entries()) {
             Product product = productDb.getProduct(receiptEntry.product().name());
-            if(product.type().equals(Product.Type.GRAINS) || receiptEntry.quantity() >= 3) {
+            if (product.type().equals(Product.Type.GRAINS) || receiptEntry.quantity() >= 3) {
                 return true;
             }
         }

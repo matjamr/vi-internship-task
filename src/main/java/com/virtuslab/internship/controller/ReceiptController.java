@@ -1,6 +1,5 @@
 package com.virtuslab.internship.controller;
 
-import com.virtuslab.internship.entity.basket.Basket;
 import com.virtuslab.internship.entity.receipt.Receipt;
 import com.virtuslab.internship.service.ReceiptService;
 import org.springframework.web.bind.annotation.GetMapping;

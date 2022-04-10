@@ -12,9 +12,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TenPercentDiscountTest {
-
     @Test
-    void shouldApply10PercentDiscountWhenPriceIsAbove50() {
+    void shouldApply10PercentDiscountWhenPriceIsAboveOrEqual50() {
         // Given
         var productDb = new ProductDb();
         var cheese = productDb.getProduct("Cheese");

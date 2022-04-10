@@ -3,7 +3,6 @@ package com.virtuslab.internship.entity.discount;
 import com.virtuslab.internship.entity.receipt.Receipt;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 
 public class TenPercentDiscount {
 

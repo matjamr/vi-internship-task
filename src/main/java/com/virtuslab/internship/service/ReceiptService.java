@@ -16,16 +16,16 @@ public class ReceiptService {
         this.basket = basket;
     }
 
+    private static Receipt applyDiscounts(final Receipt receipt) {
+        final FifteenPercentDiscount fifteenPercentDiscount = new FifteenPercentDiscount();
+        final TenPercentDiscount tenPercentDiscount = new TenPercentDiscount();
+        return tenPercentDiscount.apply(fifteenPercentDiscount.apply(receipt));
+    }
+
     public Receipt getReceipt() {
         ReceiptGenerator receiptGenerator = new ReceiptGenerator();
         Receipt receipt = receiptGenerator.generate(basket);
 
         return applyDiscounts(receipt);
-    }
-
-    private static Receipt applyDiscounts(final Receipt receipt) {
-        final FifteenPercentDiscount fifteenPercentDiscount = new FifteenPercentDiscount();
-        final TenPercentDiscount tenPercentDiscount = new TenPercentDiscount();
-        return tenPercentDiscount.apply(fifteenPercentDiscount.apply(receipt));
     }
 }
